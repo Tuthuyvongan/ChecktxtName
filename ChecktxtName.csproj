@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>book.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -87,6 +90,7 @@
     <None Include="Resources\txt.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="book.ico" />
     <Content Include="Resources\book.ico" />
     <Content Include="Resources\download.png" />
     <Content Include="Resources\file-storage.png" />
