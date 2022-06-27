@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChecktxtName", "ChecktxtName.csproj", "{F655CBBB-219F-460A-BBC7-D4C443A78D2F}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CheckNameSetup", "CheckNameSetup\CheckNameSetup.vdproj", "{A1956B04-FB25-4FB4-9DB5-851AF17072EB}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Check Name", "Check Name\Check Name.vdproj", "{EC3A4A2D-C56F-4555-B4AD-0FEF00796D71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{F655CBBB-219F-460A-BBC7-D4C443A78D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F655CBBB-219F-460A-BBC7-D4C443A78D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F655CBBB-219F-460A-BBC7-D4C443A78D2F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A1956B04-FB25-4FB4-9DB5-851AF17072EB}.Debug|Any CPU.ActiveCfg = Debug
-		{A1956B04-FB25-4FB4-9DB5-851AF17072EB}.Release|Any CPU.ActiveCfg = Release
+		{EC3A4A2D-C56F-4555-B4AD-0FEF00796D71}.Debug|Any CPU.ActiveCfg = Debug
+		{EC3A4A2D-C56F-4555-B4AD-0FEF00796D71}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
