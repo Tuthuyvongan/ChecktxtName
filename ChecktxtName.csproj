@@ -86,5 +86,11 @@
   <ItemGroup>
     <None Include="Resources\txt.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\book.ico" />
+    <Content Include="Resources\download.png" />
+    <Content Include="Resources\file-storage.png" />
+    <Content Include="Resources\finding.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
