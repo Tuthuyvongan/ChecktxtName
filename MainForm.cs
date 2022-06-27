@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ChecktxtName
@@ -12,6 +13,8 @@ namespace ChecktxtName
         {
             InitializeComponent();
         }
+        public int i;
+        public int temp;
 
         public void LoadFile()
         {
@@ -19,9 +22,9 @@ namespace ChecktxtName
             OpenFileDialog file_open = new OpenFileDialog();
 
             //Setup open file dialog before displaying it
-            file_open.Filter = "txt files (*.txt)|*.txt";
+            file_open.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             //Chon dang file mac dinh hien thi dau tien trong combo box neu mo nhieu loai file
-            file_open.FilterIndex = 1;
+            file_open.FilterIndex = 2;
             file_open.Title = "Open novel file";
 
             //Display the dialog and grab the file name
@@ -42,9 +45,9 @@ namespace ChecktxtName
             OpenFileDialog file_open = new OpenFileDialog();
 
             //Setup open file dialog before displaying it
-            file_open.Filter = "txt files (*.txt)|*.txt";
+            file_open.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             //Chon dang file mac dinh hien thi dau tien trong combo box neu mo nhieu loai file
-            file_open.FilterIndex = 1;
+            file_open.FilterIndex = 2;
             file_open.Title = "Open name file";
 
             //Display the dialog and grab the file name
@@ -63,7 +66,10 @@ namespace ChecktxtName
         {
             txtSaveName.Text = null;
             string[] lines = txtName.Text.Split('\n');
-            for (int i = 0; i < lines.Count(); i++)
+            temp = lines.Count();
+            if (txtName.Text != "")
+                bgwLoadFile.RunWorkerAsync();
+            for (i = 0; i < lines.Count(); i++)
             {
                 if (lines[i].Length > 0)
                 {
@@ -128,6 +134,35 @@ namespace ChecktxtName
         private void btSave_Click(object sender, EventArgs e)
         {
             saveName();
+        }
+
+        private void bgwLoadFile_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            int a;
+            MessageWaitForm msf = new MessageWaitForm();
+            Thread backgroundThreadFetchData = new Thread(
+                        new ThreadStart(() =>
+                        {
+                            while( i < temp)
+                            {
+                                Thread.Sleep(50);
+                                a = (i + 1) * 100 / temp;
+                                msf.UpdateProgress(a, "Searching name, please wait ... ");
+                            }
+                            msf.BeginInvoke(new Action(() => msf.Close()));
+                        }));
+            backgroundThreadFetchData.Start();
+            msf.ShowDialog();
+        }
+
+        private void bgwLoadFile_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        {
+            Application.DoEvents();
+        }
+
+        private void bgwLoadFile_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("Finish search file");
         }
     }
 }

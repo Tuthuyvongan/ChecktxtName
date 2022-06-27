@@ -40,6 +40,7 @@ namespace ChecktxtName
             this.txtSaveName = new System.Windows.Forms.RichTextBox();
             this.txtName = new System.Windows.Forms.RichTextBox();
             this.txtNovel = new System.Windows.Forms.RichTextBox();
+            this.bgwLoadFile = new System.ComponentModel.BackgroundWorker();
             this.MainTPanel.SuspendLayout();
             this.tbButton.SuspendLayout();
             this.tbText.SuspendLayout();
@@ -54,11 +55,10 @@ namespace ChecktxtName
             this.MainTPanel.Controls.Add(this.tbText, 0, 0);
             this.MainTPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainTPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MainTPanel.Name = "MainTPanel";
             this.MainTPanel.RowCount = 1;
             this.MainTPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MainTPanel.Size = new System.Drawing.Size(1179, 567);
+            this.MainTPanel.Size = new System.Drawing.Size(884, 461);
             this.MainTPanel.TabIndex = 0;
             // 
             // tbButton
@@ -72,8 +72,7 @@ namespace ChecktxtName
             this.tbButton.Controls.Add(this.btLoadName, 0, 3);
             this.tbButton.Controls.Add(this.btFind, 0, 5);
             this.tbButton.Controls.Add(this.btSave, 0, 7);
-            this.tbButton.Location = new System.Drawing.Point(947, 4);
-            this.tbButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbButton.Location = new System.Drawing.Point(710, 3);
             this.tbButton.Name = "tbButton";
             this.tbButton.RowCount = 9;
             this.tbButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.58741F));
@@ -85,7 +84,7 @@ namespace ChecktxtName
             this.tbButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.293706F));
             this.tbButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.98601F));
             this.tbButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.58741F));
-            this.tbButton.Size = new System.Drawing.Size(228, 559);
+            this.tbButton.Size = new System.Drawing.Size(171, 455);
             this.tbButton.TabIndex = 0;
             // 
             // btLoadFile
@@ -105,10 +104,9 @@ namespace ChecktxtName
             this.btLoadFile.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(80)))), ((int)(((byte)(90)))));
             this.btLoadFile.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(215)))));
             this.btLoadFile.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btLoadFile.Location = new System.Drawing.Point(4, 74);
-            this.btLoadFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btLoadFile.Location = new System.Drawing.Point(3, 60);
             this.btLoadFile.Name = "btLoadFile";
-            this.btLoadFile.Size = new System.Drawing.Size(220, 70);
+            this.btLoadFile.Size = new System.Drawing.Size(165, 57);
             this.btLoadFile.TabIndex = 1;
             this.btLoadFile.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(200)))), ((int)(((byte)(185)))));
             this.btLoadFile.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -131,10 +129,9 @@ namespace ChecktxtName
             this.btLoadName.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(80)))), ((int)(((byte)(90)))));
             this.btLoadName.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(215)))));
             this.btLoadName.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btLoadName.Location = new System.Drawing.Point(4, 187);
-            this.btLoadName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btLoadName.Location = new System.Drawing.Point(3, 151);
             this.btLoadName.Name = "btLoadName";
-            this.btLoadName.Size = new System.Drawing.Size(220, 70);
+            this.btLoadName.Size = new System.Drawing.Size(165, 57);
             this.btLoadName.TabIndex = 2;
             this.btLoadName.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(200)))), ((int)(((byte)(185)))));
             this.btLoadName.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -157,10 +154,9 @@ namespace ChecktxtName
             this.btFind.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(80)))), ((int)(((byte)(90)))));
             this.btFind.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(215)))));
             this.btFind.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btFind.Location = new System.Drawing.Point(4, 300);
-            this.btFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btFind.Location = new System.Drawing.Point(3, 242);
             this.btFind.Name = "btFind";
-            this.btFind.Size = new System.Drawing.Size(220, 70);
+            this.btFind.Size = new System.Drawing.Size(165, 57);
             this.btFind.TabIndex = 3;
             this.btFind.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(200)))), ((int)(((byte)(185)))));
             this.btFind.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -183,10 +179,9 @@ namespace ChecktxtName
             this.btSave.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(80)))), ((int)(((byte)(90)))));
             this.btSave.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(215)))));
             this.btSave.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btSave.Location = new System.Drawing.Point(4, 413);
-            this.btSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btSave.Location = new System.Drawing.Point(3, 333);
             this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(220, 70);
+            this.btSave.Size = new System.Drawing.Size(165, 57);
             this.btSave.TabIndex = 4;
             this.btSave.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(200)))), ((int)(((byte)(185)))));
             this.btSave.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -202,14 +197,13 @@ namespace ChecktxtName
             this.tbText.Controls.Add(this.txtSaveName, 0, 2);
             this.tbText.Controls.Add(this.txtName, 0, 1);
             this.tbText.Controls.Add(this.txtNovel, 0, 0);
-            this.tbText.Location = new System.Drawing.Point(4, 4);
-            this.tbText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbText.Location = new System.Drawing.Point(3, 3);
             this.tbText.Name = "tbText";
             this.tbText.RowCount = 3;
             this.tbText.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tbText.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tbText.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tbText.Size = new System.Drawing.Size(935, 559);
+            this.tbText.Size = new System.Drawing.Size(701, 455);
             this.tbText.TabIndex = 1;
             // 
             // txtSaveName
@@ -219,10 +213,9 @@ namespace ChecktxtName
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSaveName.BackColor = System.Drawing.Color.White;
             this.txtSaveName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSaveName.Location = new System.Drawing.Point(4, 376);
-            this.txtSaveName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSaveName.Location = new System.Drawing.Point(3, 305);
             this.txtSaveName.Name = "txtSaveName";
-            this.txtSaveName.Size = new System.Drawing.Size(927, 179);
+            this.txtSaveName.Size = new System.Drawing.Size(695, 147);
             this.txtSaveName.TabIndex = 2;
             this.txtSaveName.Text = "";
             // 
@@ -233,10 +226,9 @@ namespace ChecktxtName
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName.Location = new System.Drawing.Point(4, 190);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Location = new System.Drawing.Point(3, 154);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(927, 178);
+            this.txtName.Size = new System.Drawing.Size(695, 145);
             this.txtName.TabIndex = 1;
             this.txtName.Text = "";
             // 
@@ -247,22 +239,28 @@ namespace ChecktxtName
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNovel.BackColor = System.Drawing.Color.White;
             this.txtNovel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNovel.Location = new System.Drawing.Point(4, 4);
-            this.txtNovel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNovel.Location = new System.Drawing.Point(3, 3);
             this.txtNovel.Name = "txtNovel";
-            this.txtNovel.Size = new System.Drawing.Size(927, 178);
+            this.txtNovel.Size = new System.Drawing.Size(695, 145);
             this.txtNovel.TabIndex = 0;
             this.txtNovel.Text = "";
             // 
+            // bgwLoadFile
+            // 
+            this.bgwLoadFile.WorkerReportsProgress = true;
+            this.bgwLoadFile.WorkerSupportsCancellation = true;
+            this.bgwLoadFile.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwLoadFile_DoWork);
+            this.bgwLoadFile.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgwLoadFile_ProgressChanged);
+            this.bgwLoadFile.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwLoadFile_RunWorkerCompleted);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1179, 567);
+            this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.MainTPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Check Name";
@@ -285,6 +283,7 @@ namespace ChecktxtName
         private System.Windows.Forms.RichTextBox txtSaveName;
         private System.Windows.Forms.RichTextBox txtName;
         private System.Windows.Forms.RichTextBox txtNovel;
+        public System.ComponentModel.BackgroundWorker bgwLoadFile;
     }
 }
 
