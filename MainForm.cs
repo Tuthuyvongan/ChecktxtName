@@ -62,7 +62,7 @@ namespace ChecktxtName
                 FileStream fs = File.OpenRead(fileData);
                 BufferedStream bs = new BufferedStream(fs);
                 StreamReader sr = new StreamReader(bs);
-                txtNovel.Text = sr.ReadToEnd();
+                txtName.Text = sr.ReadToEnd();
                 sr.Close();
             }
         }
