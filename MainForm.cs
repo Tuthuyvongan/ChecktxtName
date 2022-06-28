@@ -34,7 +34,9 @@ namespace ChecktxtName
                     return;
                 //Read file with StreamReader || StreamReader will try to read file in encode UTF-8
                 string fileData = file_open.FileName;
-                StreamReader sr = new StreamReader(fileData);
+                FileStream fs = File.OpenRead(fileData);
+                BufferedStream bs = new BufferedStream(fs);
+                StreamReader sr = new StreamReader(bs);
                 txtNovel.Text = sr.ReadToEnd();
                 sr.Close();
             }
@@ -57,8 +59,10 @@ namespace ChecktxtName
                     return;
                 //Read file with StreamReader || StreamReader will try to read file in encode UTF-8
                 string fileData = file_open.FileName;
-                StreamReader sr = new StreamReader(fileData);
-                txtName.Text = sr.ReadToEnd();
+                FileStream fs = File.OpenRead(fileData);
+                BufferedStream bs = new BufferedStream(fs);
+                StreamReader sr = new StreamReader(bs);
+                txtNovel.Text = sr.ReadToEnd();
                 sr.Close();
             }
         }
