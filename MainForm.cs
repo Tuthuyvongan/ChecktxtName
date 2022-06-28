@@ -154,12 +154,6 @@ namespace ChecktxtName
             backgroundThreadFetchData.Start();
             msf.ShowDialog();
         }
-
-        private void bgwLoadFile_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
-        {
-            Application.DoEvents();
-        }
-
         private void bgwLoadFile_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
             MessageBox.Show("Finish search file");

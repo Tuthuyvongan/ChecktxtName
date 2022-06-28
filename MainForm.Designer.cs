@@ -250,7 +250,6 @@ namespace ChecktxtName
             this.bgwLoadFile.WorkerReportsProgress = true;
             this.bgwLoadFile.WorkerSupportsCancellation = true;
             this.bgwLoadFile.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwLoadFile_DoWork);
-            this.bgwLoadFile.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgwLoadFile_ProgressChanged);
             this.bgwLoadFile.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwLoadFile_RunWorkerCompleted);
             // 
             // MainForm
