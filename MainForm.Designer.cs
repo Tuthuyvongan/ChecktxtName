@@ -41,7 +41,6 @@ namespace ChecktxtName
             this.txtName = new System.Windows.Forms.RichTextBox();
             this.txtNovel = new System.Windows.Forms.RichTextBox();
             this.bgwSearch = new System.ComponentModel.BackgroundWorker();
-            this.bgwLoadFile = new System.ComponentModel.BackgroundWorker();
             this.MainTPanel.SuspendLayout();
             this.tbButton.SuspendLayout();
             this.tbText.SuspendLayout();
@@ -263,13 +262,6 @@ namespace ChecktxtName
             this.bgwSearch.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwSearch_DoWork);
             this.bgwSearch.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwSearch_RunWorkerCompleted);
             // 
-            // bgwLoadFile
-            // 
-            this.bgwLoadFile.WorkerReportsProgress = true;
-            this.bgwLoadFile.WorkerSupportsCancellation = true;
-            this.bgwLoadFile.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwLoadFile_DoWork);
-            this.bgwLoadFile.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwLoadFile_RunWorkerCompleted);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -302,7 +294,6 @@ namespace ChecktxtName
         private System.Windows.Forms.RichTextBox txtName;
         private System.Windows.Forms.RichTextBox txtNovel;
         public System.ComponentModel.BackgroundWorker bgwSearch;
-        public System.ComponentModel.BackgroundWorker bgwLoadFile;
     }
 }
 

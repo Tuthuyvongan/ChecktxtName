@@ -15,9 +15,9 @@ namespace ChecktxtName
         }
         public int i;
         public int temp;
-        public int j = 0;
         public void LoadFile()
         {
+            txtNovel.Text = null;
             //Create instance of Open file dialog
             OpenFileDialog file_open = new OpenFileDialog();
 
@@ -36,19 +36,14 @@ namespace ChecktxtName
                 string fileData = file_open.FileName;
                 FileStream fs = File.OpenRead(fileData);
                 BufferedStream bs = new BufferedStream(fs);
-                StreamReader sr = new StreamReader(bs);
-                //if (sr.ReadLine() != null)
-                //{
-                //    j++;
-                //}
-                //else
-                //    bgwLoadFile.RunWorkerAsync();
+                StreamReader sr = new StreamReader(bs); 
                 txtNovel.Text = sr.ReadToEnd();
                 sr.Close();
             }
         }
         public void LoadName()
         {
+            txtName.Text = null;
             //Create instance of Open file dialog
             OpenFileDialog file_open = new OpenFileDialog();
 
@@ -167,31 +162,6 @@ namespace ChecktxtName
         private void bgwSearch_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
             MessageBox.Show("Finish search file");
-        }
-
-        private void bgwLoadFile_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
-        {
-            int a;
-            i = 0;
-            MessageWaitForm msf = new MessageWaitForm();
-            Thread backgroundThreadFetchData = new Thread(
-                        new ThreadStart(() =>
-                        {
-                            while (i < j)
-                            {
-                                Thread.Sleep(50);
-                                a = (i + 1) * 100 / j;
-                                msf.UpdateProgress(a, "Load file, please wait ... ");
-                            }
-                            msf.BeginInvoke(new Action(() => msf.Close()));
-                        }));
-            backgroundThreadFetchData.Start();
-            msf.ShowDialog();
-        }
-
-        private void bgwLoadFile_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
-        {
-
         }
     }
 }
