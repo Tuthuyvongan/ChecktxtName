@@ -48,7 +48,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="XanderUI">
-      <HintPath>..\..\..\download\XanderUI.dll</HintPath>
+      <HintPath>..\..\..\Downloads\XanderUI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

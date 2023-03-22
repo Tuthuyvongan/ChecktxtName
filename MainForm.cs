@@ -150,7 +150,6 @@ namespace ChecktxtName
                         {
                             while( i < temp)
                             {
-                                Thread.Sleep(50);
                                 a = (i + 1) * 100 / temp;
                                 msf.UpdateProgress(a, "Searching name, please wait ... ");
                             }
